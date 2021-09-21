@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+.login-section {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.content {
+  height: 80vh;
+  background-color: #18181b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px;
+}
+
+.form--login  form{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+@font-face {
+  font-family: 'HARRYP__';
+  src: url('../assets/HARRYP__.TTF');
+}
+.form--login h1 {
+  color: #f0c75e;
+  margin-bottom: 20px;
+  font-family: "HARRYP__";
+  font-size: 30px;
+}
+
+.form--login label {
+  margin-top: 10px;
+  font-family: "HARRYP__";
+  font-size: 20px;
+  color: white;
+}
+
+.input-form {
+  border-radius: 4px;
+  margin: 15px 0; 
+  padding: 10px 20px;
+  background-color: #808080;
+  outline-style: none;
+}
+
+.input-form:focus{
+  background-color: black;
+  outline-color: gray;
+  color: white;
+  
+}
+
+.btn--login {
+  border-radius: 4px;
+  margin: 15px 0;
+  padding: 8px 75px;
+  background-color: #f0c75e;
+  cursor: pointer;
+  transition: all .3s;
+  font-family: "HARRYP__";
+  font-size: 30px;
+}
+
+.btn--login:hover {
+  background-color: #ecb939;
+}
+
+.image {
+  padding-left: 80px;
+}
+.image img {
+  width: 300px;
+}

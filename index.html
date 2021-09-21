@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Formulario</title>
+</head>
+<body>
+  <section class="login-section">
+    <div class="content">
+      <div class="form--login">
+        <h1> Welcome to Hogwarts</h1>
+        <form >
+          <label> Email </label>
+          <input class="input-form" id="email" autocomplete="off">
+          <label> Password </label>
+          <input type="password"class="input-form" id="password" autocomplete="off">
+          <button class="btn--login" id="button-submit"> Submit </button>
+        </form>
+      </div>
+      <div class="image">
+        <img src="assets/image5-2-1024x576-1-1024x576.png"/>
+      </div>
+    </div>
+  </section>
+</body>
+<script>
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+  const buttonSubmit = document.getElementById("button-submit");
+
+  const user = {
+    userEmail: "",
+    userPassword: "",
+  }
+
+  buttonSubmit.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    user.userEmail = emailInput.value;
+    user.userPassword = passwordInput.value;
+
+    console.log(user);
+  })
+
+</script>
+</html>
