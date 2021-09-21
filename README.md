@@ -1,2 +1,2 @@
 # hogwarts
-A interface from just pratice JavaScript, HTML and CSS.
+An interface just for practicing JavaScript, HTML and CSS.
