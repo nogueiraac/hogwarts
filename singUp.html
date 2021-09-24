@@ -44,10 +44,7 @@
 
   const divImagem = document.getElementById("image")
   
-  const conteudoNovo = document.createTextNode(`${user?.userHouse}`);
-  const houseUser = document.createElement("p");
-  houseUser.appendChild(conteudoNovo)
-  divImagem.appendChild(houseUser)
+  
   
 
   
@@ -96,6 +93,11 @@
     user.userName = userNameInput.value;
     user.userPassword = passwordInput.value;
     user.userHouse = setHouse(user.userName)
+
+    const conteudoNovo = document.createTextNode(`${user?.userHouse} !`);
+    const houseUser = document.createElement("h1");
+    houseUser.appendChild(conteudoNovo)
+    divImagem.appendChild(houseUser)
 
     console.log("user", user)
   })
