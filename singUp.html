@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/signUp.css">
+  <title>Formulario</title>
+</head>
+<body>
+  <section class="login-section">
+    <div class="content">
+      <div class="form--login">
+        <h1> Sign Up </h1>
+        <form >
+          <label> Username </label>
+          <input class="input-form" id="username" autocomplete="off">
+          <label> Password </label>
+          <input type="password"class="input-form" id="password" autocomplete="off">
+          <button class="btn--login" id="button-submit"> Submit </button>
+        </form>
+      </div>
+      <div class="image" id="image">
+        <img src="assets/image-removebg-preview.png"/>
+        <h2>Hmm, vejamos o que temos aqui</h2>
+       
+      </div>
+    </div>
+  </section>
+</body>
+<script>
+
+  const user = {
+    userName: "",
+    userPassword: "",
+    userHouse: "",
+  }
+
+  const userNameInput = document.getElementById("username");
+  const passwordInput = document.getElementById("password");
+  const buttonSubmit = document.getElementById("button-submit");
+
+  const imagem = document.querySelector('.image')
+
+  const divImagem = document.getElementById("image")
+  
+  const conteudoNovo = document.createTextNode(`${user?.userHouse}`);
+  const houseUser = document.createElement("p");
+  houseUser.appendChild(conteudoNovo)
+  divImagem.appendChild(houseUser)
+  
+
+  
+  
+  hashCode = function(s){
+  return s.split("")
+    .reduce(function(a,b){
+      a = ((a<<5)-a)+b.charCodeAt(0);
+      return a&a
+    } ,0);              
+  }
+
+
+  function setHouse(x) {
+    name = x
+    const codeHouse = hashCode(x)
+    var el = Math.abs(codeHouse) % 10
+    const mod = el%4;
+
+    var house =""
+    switch(mod) {
+      case 0:
+        house = "Grynffindor"
+        break;
+      case 1 :
+        house = "Ranveclaw"
+        break;
+      case 2 :
+        house = "Slytherin"
+        break;    
+      case 3 :
+        house = "Hufflepuff"
+        break;
+    }
+
+    return house
+  }
+
+  buttonSubmit.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    imagem.style.display = 'flex'
+  
+    
+
+    user.userName = userNameInput.value;
+    user.userPassword = passwordInput.value;
+    user.userHouse = setHouse(user.userName)
+
+    console.log("user", user)
+  })
+
+</script>
+</html>
